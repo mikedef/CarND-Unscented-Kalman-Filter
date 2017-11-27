@@ -4,6 +4,8 @@
 #include <math.h>
 #include "ukf.h"
 #include "tools.h"
+#include "Eigen/Dense"
+#include "measurement_package.h"
 
 using namespace std;
 
