@@ -42,3 +42,34 @@ Please (do your best to) stick to [Google's C++ style guide](https://google.gith
 ![alt text](UKF-lidar-radar.png)
 
 The accuracy for px,py,vx,vy respectively are as shown in the above image of 0.07, 0.08, 0.32, 0.29. This is less than the required accuracy for the UKF algorithm. 
+
+## Follows the Correct Algorithm
+#### Sensor Fusion algorithm follows the general processing flow as taught in the preceding lessons.
+The Unscented Kalman filter implimentation can be found in the following files of [kalman_filter.cpp](https://github.com/mikedef/CarND-Unscented-Kalman-Filter/tree/master/src).
+
+#### Kalman Filter algorithm handles the first measurements appropriately.
+
+The first measurements are handled in UKF.cpp. The program is robust enough to take in either a Laser or Radar measurement first and then initialize the UKF appropriately. 
+
+#### Kalman Filter algorithm first predicts then updates.
+
+In UKF I first predict the state of the vehicle, then I update the state based on the incoming Laser or Radar measurements.
+
+#### Kalman Filter can handle radar and lidar measurements.
+
+The UKF can handle both Radar and Lidar measurements. 
+
+## What's the difference between the combined radar/lidar UKF versus pure radar UKF or a pure lidar UKF?
+Below I compare the accuracy of running an UKF with both radar and lidar measurements, versus having just radar measurements, or just lidar measurements. It is clear below that the more data (radar and lidar) will provide a more accurate state estimation.
+
+![alt text](UKF-lidar-radar.png)
+UKF with Radar and Lidar Measurements
+
+![alt text](UKF-radar.png) 
+UKF with Radar and No Lidar Measurements
+
+![alt text](UKF-lidar.png)
+UKF with Lidar and No Radar Measurements
+
+![alt text](EKF.png)
+EKF to compare to UKF
