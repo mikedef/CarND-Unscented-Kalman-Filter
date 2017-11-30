@@ -37,3 +37,8 @@ The goals/steps of this project are the following:
 
 Please (do your best to) stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
 
+## Accuracy
+#### The output coordinates px, py, vx, vy must have an RMSE <= [0.09, 0.10, 0.40, 0.30] when using the input file provided. 
+![alt text](UKF-lidar-radar.png)
+
+The accuracy for px,py,vx,vy respectively are as shown in the above image of 0.07, 0.08, 0.32, 0.29. This is less than the required accuracy for the UKF algorithm. 
