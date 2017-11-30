@@ -75,7 +75,7 @@ public:
   double NIS_laser_;
 
   ///* Previous Timestamp
-  double previous_timestamp_;
+  double time_;
 
   /**
    * Constructor
